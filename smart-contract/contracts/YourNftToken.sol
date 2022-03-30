@@ -53,7 +53,7 @@ contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
 
   function whitelistMint(uint256 _mintAmount, bytes32[] calldata _merkleProof) public payable mintCompliance(_mintAmount) mintPriceCompliance(_mintAmount) {
     // Verify whitelist requirements
-    require(whitelistMintEnabled, 'The allowlist sale is not enabled!');
+    require(whitelistMintEnabled, 'The whitelist sale is not enabled!');
     require(!whitelistClaimed[_msgSender()], 'Address already claimed!');
     bytes32 leaf = keccak256(abi.encodePacked(_msgSender()));
     require(MerkleProof.verify(_merkleProof, merkleRoot, leaf), 'Invalid proof!');
