@@ -127,6 +127,7 @@ const config: HardhatUserConfig = {
       // Ethereum
       rinkeby: process.env.BLOCK_EXPLORER_API_KEY,
       mainnet: process.env.BLOCK_EXPLORER_API_KEY,
+      ropsten: process.env.BLOCK_EXPLORER_API_KEY,
 
       // Polygon
       polygon: process.env.BLOCK_EXPLORER_API_KEY,
